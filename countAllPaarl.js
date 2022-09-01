@@ -1,5 +1,5 @@
-//using commonJS
-module.exports = function countAllPaarl(regNum) {
+// using commonJS
+export default function countAllPaarl(regNum) {
     var mpho = []
      var tsholo = regNum.split(',');
    for (var i=0;i<tsholo.length;i++) {
@@ -11,5 +11,4 @@ module.exports = function countAllPaarl(regNum) {
      console.log(mpho.length)
      return mpho.length
      }
-    
-   
+

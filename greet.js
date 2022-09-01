@@ -1,3 +1,3 @@
-module.exports = function greet(Janie) {
+export default function greet(Janie) {
     return 'Hello, ' +  Janie
    }

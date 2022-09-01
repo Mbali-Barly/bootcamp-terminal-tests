@@ -1,30 +1,46 @@
-// "acts like a script tag"
-const regCheck = require('../regCheck');
+import assert from "assert";
+import regCheck from "../regCheck.js";
 
-//should print true
-var isGP = regCheck('DV 23 NB GP', 'GP');
-console.log(isGP);
-//should print false
-var isGP = regCheck('DV 23 NB GP', 'L');
-console.log(isGP);
+describe('Test my regCheckFunction' , function(){
+    it('it should check if a registration number is for GP, L, EC, MP registration plates' , function(){
+        assert.equal(regCheck('DC 55 YU GP', 'GP'), true);
 
-//should print true
-var isGP = regCheck('BKS 352 L', 'L');
-console.log(isGP);
-//should print false
-var isGP = regCheck('BKS 352 L', 'EC');
-console.log(isGP);
+        assert.deepEqual([2,2],[2,2]);
+    });
+    it('it should check if a registration number is for GP, L, EC, MP registration plates' , function(){
+        assert.equal(regCheck('DC 55 YU GP', 'EC'), false);
 
-//should print true
-var isGP = regCheck('FH 27 JY EC', 'EC');
-console.log(isGP);
-//should print false
-var isGP = regCheck('FH 27 JY EC', 'MP');
-console.log(isGP);
+        assert.deepEqual([2,2],[2,2]);
+    });
+    it('it should check if a registration number is for GP, L, EC, MP registration plates' , function(){
+        assert.equal(regCheck('5566 L', 'L'), true);
 
-//should print true
-var isGP = regCheck('ZS 54 CX MP', 'MP');
-console.log(isGP);
-//should print false
-var isGP = regCheck('ZS 54 CX MP', 'GP');
-console.log(isGP);
+        assert.deepEqual([2,2],[2,2]);
+    });
+    it('it should check if a registration number is for GP, L, EC, MP registration plates' , function(){
+        assert.equal(regCheck('5566 L', 'M'), false);
+
+        assert.deepEqual([2,2],[2,2]);
+    });
+    it('it should check if a registration number is for GP, L, EC, MP registration plates' , function(){
+        assert.equal(regCheck('ERT 123 EC', 'EC'), true);
+
+        assert.deepEqual([2,2],[2,2]);
+    });
+    it('it should check if a registration number is for GP, L, EC, MP registration plates' , function(){
+        assert.equal(regCheck('ERT 123 EC', 'GP'), false);
+
+        assert.deepEqual([2,2],[2,2]);
+    });
+    it('it should check if a registration number is for GP, L, EC, MP registration plates' , function(){
+        assert.equal(regCheck('FGT 123 MP', 'MP'), true);
+
+        assert.deepEqual([2,2],[2,2]);
+    });
+    it('it should check if a registration number is for GP, L, EC, MP registration plates' , function(){
+        assert.equal(regCheck('FGT 123 MM', 'MP'), false);
+
+        assert.deepEqual([2,2],[2,2]);
+    });
+
+});

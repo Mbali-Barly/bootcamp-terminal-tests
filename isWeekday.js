@@ -1,5 +1,5 @@
 //using commonJS
-module.exports = function isWeekday(dayName) {
+export default function isWeekday(dayName) {
     return !dayName.startsWith('S');
     }
     
